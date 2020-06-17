@@ -1,6 +1,6 @@
 import React from 'react';
 // import './App.css';
-// import Buttons from './components/Buttons.jsx';
+ import Buttons from './components/Buttons.jsx';
 // import Headlines from './components/Headlines.jsx';
 // import Everything from './components/Everything.jsx';
 import Wholepage from './components/Wholepage.jsx';
@@ -35,10 +35,32 @@ export default class App extends React.Component{
       console.log("Everything:",this.state.everything);
   }
 
+  handleLink = (btn) => {
+    var date = new Date();
+    var month = (+date.getMonth() + 1 <= 9
+        ? "0" + (+date.getMonth() + 1)
+        : +date.getMonth() + 1);
+  
+        if(btn==='all') {
+          fetch(
+            `https://newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+          )
+          .then((res) => res.json())
+          .then((articles) => this.setState({headlines : articles.articles, everything: articles.articles }));
+      } else {
+        fetch(
+          `https://newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+        )
+          .then((res) => res.json())
+          .then((articles) => this.setState({ headlines: articles.articles, everything: articles.articles }));
+      }
+    };
+
   render() {
     return ( 
     <>
       <Wholepage sources= {this.state.sources} headlines = {this.state.headlines} everything = {this.state.everything}/>
+      {/* <Buttons data={this.state.sources} click={this.handleLink} /> */}
     </>
     )
   }

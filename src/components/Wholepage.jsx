@@ -28,16 +28,27 @@ function Wholepage(props) {
         <h1> Loading ...</h1>
       )}
 
-      <div className="flex">
-        <div className="topnews_card">
-          {props.headlines ? (
-            <Topnews headlines={props.headlines} />
+      <div className="flex flex1">
+        <div className="both_card">
+          <div className="topnews_card">
+            {props.headlines ? (
+              <Topnews headlines={props.headlines} />
+            ) : (
+              <h1> Loading ...</h1>
+            )}
+          </div>
+
+          {props.everything ? (
+            <div>
+              {/* <h3> TOP NEWS </h3> */}
+              <Everything everything={props.everything} />
+            </div>
           ) : (
             <h1> Loading ...</h1>
           )}
         </div>
 
-        <section>
+        <section className='right_panel'>
           <h2>HEADLINES</h2>
           {props.headlines ? (
             <Headlines headlines={props.headlines} />
@@ -46,15 +57,6 @@ function Wholepage(props) {
           )}
         </section>
       </div>
-
-      {props.everything ? (
-        <div>
-          {/* <h3> TOP NEWS </h3> */}
-          <Everything everything={props.everything} />
-        </div>
-      ) : (
-        <h1> Loading ...</h1>
-      )}
     </div>
   );
 }
