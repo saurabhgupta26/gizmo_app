@@ -124,3 +124,9 @@ h1 {
 .right_panel {
     margin-left: 20px;
 }
+a {
+    text-decoration: none;
+}
+svg path {
+    fill: #FA5252;
+  }

@@ -9,8 +9,8 @@ function Headlines(props) {
             // <div className="news_right">
                 <div className="news_card">
                     <div className="flex">
-                        <span className="channel">{elem.source.name}</span>
-                        <span>{elem.publishedAt}</span>
+                        <a href={elem.url}><span className="channel">{elem.source.name}</span></a>
+                        <span>{elem.publishedAt.split('T')[0]}</span>
                     </div>
                     <h4> {elem.title} </h4>
                 </div>

@@ -2,7 +2,8 @@ import React from "react";
 import Buttons from "./Buttons";
 import Headlines from "./Headlines.jsx";
 import Everything from "./Everything.jsx";
-import Topnews from "./Topnews";
+import Topnews from "./Topnews.jsx";
+import Loading from './Loading.jsx';
 
 function Wholepage(props) {
   return (
@@ -22,10 +23,10 @@ function Wholepage(props) {
 
       {props.sources ? (
         <div>
-          <Buttons s={props.sources} />
+          <Buttons s={props.sources} handleLink={props.handleLink} />
         </div>
       ) : (
-        <h1> Loading ...</h1>
+        <Loading />
       )}
 
       <div className="flex flex1">
@@ -34,7 +35,7 @@ function Wholepage(props) {
             {props.headlines ? (
               <Topnews headlines={props.headlines} />
             ) : (
-              <h1> Loading ...</h1>
+              <Loading />
             )}
           </div>
 
@@ -44,7 +45,7 @@ function Wholepage(props) {
               <Everything everything={props.everything} />
             </div>
           ) : (
-            <h1> Loading ...</h1>
+            <Loading />
           )}
         </div>
 
@@ -53,12 +54,11 @@ function Wholepage(props) {
           {props.headlines ? (
             <Headlines headlines={props.headlines} />
           ) : (
-            <h1> Loading ...</h1>
+            <Loading />
           )}
         </section>
       </div>
     </div>
   );
 }
-
 export default Wholepage;

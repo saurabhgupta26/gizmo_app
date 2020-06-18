@@ -23,7 +23,7 @@ export default class App extends React.Component{
       console.log("state: ",this.state.sources);      
 
     // this.setState({headlines : null});
-    fetch(`https://newsapi.org/v2/top-headlines?language=en&country=in&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
+    fetch(`https://newsapi.org/v2/top-headlines?language=en&country=us&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
       .then((response) => response.json())
       .then((articles) => this.setState({headlines: articles.articles}))
       console.log("headlines:",this.state.headlines);
@@ -40,13 +40,12 @@ export default class App extends React.Component{
     var month = (+date.getMonth() + 1 <= 9
         ? "0" + (+date.getMonth() + 1)
         : +date.getMonth() + 1);
-  
         if(btn==='all') {
           fetch(
             `https://newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
           )
           .then((res) => res.json())
-          .then((articles) => this.setState({headlines : articles.articles, everything: articles.articles }));
+          .then((articles) => this.setState({headlines : articles.articles, everything: articles.articles, sources: articles.sources }));
       } else {
         fetch(
           `https://newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
@@ -59,7 +58,7 @@ export default class App extends React.Component{
   render() {
     return ( 
     <>
-      <Wholepage sources= {this.state.sources} headlines = {this.state.headlines} everything = {this.state.everything}/>
+      <Wholepage sources= {this.state.sources} headlines = {this.state.headlines} everything = {this.state.everything} handleLink={this.handleLink}/>
       {/* <Buttons data={this.state.sources} click={this.handleLink} /> */}
     </>
     )
