@@ -1,6 +1,7 @@
 import React from "react";
 
 function Headlines(props) {
+  console.log(props,"head lines")
   return (
     <div>
       {props.headlines.map((elem) => {

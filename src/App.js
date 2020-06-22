@@ -44,14 +44,12 @@ export default class App extends React.Component{
         ? "0" + (+date.getMonth() + 1)
         : +date.getMonth() + 1);
         if(btn==='all') {
-          fetch(
-            `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+          fetch(`https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
           )
           .then((res) => res.json())
           .then((articles) => this.setState({headlines : articles.articles, everything: articles.articles, sources: articles.sources }));
       } else {
-        fetch(
-          `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+        fetch(`https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
         )
           .then((res) => res.json())
           .then((articles) => this.setState({ headlines: articles.articles, everything: articles.articles }));
