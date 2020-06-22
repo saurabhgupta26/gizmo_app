@@ -1,12 +1,12 @@
 import React from "react";
 
 function Everything(props) {
+  console.log('in everything')
   return (
     <div className='grid'>
-      {props.everything.map((elem) => {        
+      {props.everything.map((elem, i) => {        
         return (
-            // <div className="grid">
-              <div className="news_left">
+              <div className="news_left" key={i}>
               <div className="news_card top_card">
                 <img src={elem.urlToImage} alt="img" />
                 <div className="flex">
@@ -16,7 +16,6 @@ function Everything(props) {
                 <h4> {elem.title} </h4>
               </div>
             </div>
-            // </div>
         );
       })}
     </div>
