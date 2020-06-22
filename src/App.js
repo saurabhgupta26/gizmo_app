@@ -18,19 +18,19 @@ export default class App extends React.Component{
 
   componentDidMount() {
       // this.setState({sources : null});
-    fetch(`https://newsapi.org/v2/sources?language=en&country=us&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
+    fetch(`https://cors-anywhere.herokuapp.com/newsapi.org/v2/sources?language=en&country=us&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
       .then((response) => response.json())
       .then((articles) => this.setState({sources: articles.sources}))
       console.log("state: ",this.state.sources);      
 
     // this.setState({headlines : null});
-    fetch(`https://newsapi.org/v2/top-headlines?language=en&country=us&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
+    fetch(`https://cors-anywhere.herokuapp.com/newsapi.org/v2/top-headlines?language=en&country=us&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
       .then((response) => response.json())
       .then((articles) => this.setState({headlines: articles.articles}))
       console.log("headlines:",this.state.headlines);
   
     // this.setState({everything : null});
-    fetch(`https://newsapi.org/v2/everything?q=india&pageSize=100&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
+    fetch(`https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=india&pageSize=100&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
       .then((response) => response.json())
       .then((articles) => this.setState({ everything: articles.articles }))
       console.log("Everything:",this.state.everything);
@@ -45,13 +45,13 @@ export default class App extends React.Component{
         : +date.getMonth() + 1);
         if(btn==='all') {
           fetch(
-            `https://newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+            `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
           )
           .then((res) => res.json())
           .then((articles) => this.setState({headlines : articles.articles, everything: articles.articles, sources: articles.sources }));
       } else {
         fetch(
-          `https://newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+          `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
         )
           .then((res) => res.json())
           .then((articles) => this.setState({ headlines: articles.articles, everything: articles.articles }));
@@ -76,7 +76,7 @@ export default class App extends React.Component{
     }
 
     handleSubmit(search) {  
-    fetch(`https://newsapi.org/v2/everything?sources=${search}&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
+    fetch(`https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?sources=${search}&apiKey=fd574688ac0743ea9dae28f36bd7df97`)
       .then((response) => response.json())
       .then((articles) => this.setState({ everything: articles.articles }))
   }
