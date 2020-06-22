@@ -3,7 +3,7 @@ import Buttons from "./Buttons";
 import Headlines from "./Headlines.jsx";
 import Everything from "./Everything.jsx";
 import Topnews from "./Topnews.jsx";
-import Loading from './Loading.jsx';
+import Loading from "./Loading.jsx";
 
 function Wholepage(props) {
   return (
@@ -14,8 +14,16 @@ function Wholepage(props) {
         </h1>
         <div className="flex">
           <span>
-            <input type="text" placeholder="Search.." />{" "}
-            <i class="fas fa-search"></i>
+            {/* <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                onChange={props.searchText}
+                value={this.state.search}
+                placeholder="Search.."
+              />
+              <i class="fas fa-search"></i>
+              <input type="submit" value="Search" />
+            </form> */}
           </span>
           <span className="head_english channel">EN</span>
         </div>
@@ -49,7 +57,7 @@ function Wholepage(props) {
           )}
         </div>
 
-        <section className='right_panel'>
+        <section className="right_panel">
           <h2>HEADLINES</h2>
           {props.headlines ? (
             <Headlines headlines={props.headlines} />

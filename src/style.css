@@ -94,7 +94,7 @@ h1 {
 }
 .topnews_side {
     /* border-top: 1px solid #FA5252; */
-    border-bottom: 1px solid #FA5252;
+    /* border-bottom: 1px solid #FA5252; */
     width: 35%;
     margin: 5px;
 }
@@ -102,7 +102,7 @@ h1 {
 .topnews_card {
     border: 1px solid #FA5252;
     width: 98%;
-    height: 400px;
+    /* height: 500px; */
 }
 .img_topnews {
     width: 60%;
