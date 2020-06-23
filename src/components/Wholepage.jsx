@@ -21,22 +21,22 @@ function Wholepage(props) {
                 placeholder="Search.."
               />
               <i class="fas fa-search"></i>
-              <label>Pick preferred laguage : 
+              <label>Pick preferred language : 
                 <select value={props.value} onChange={props.input}>
-                  <option value="ar">Ar</option>
-                  <option value="en">En</option>
-                  <option value="es">Es</option>
-                  <option value="de">De</option>
-                  <option value="fr">Fr</option>
-                  <option value="he">He</option>
-                  <option value="it">It</option>
-                  <option value="nl">Nl</option>
-                  <option value="no">No</option>
-                  <option value="pt">Pt</option>
-                  <option value="ru">Ru</option>
-                  <option value="se">Se</option>
-                  <option value="ud">Ud</option>
-                  <option value="zh">Zh</option>
+                  <option value="ar">🇸🇦 Ar</option>
+                  <option value="de">🇩🇪 De</option>
+                  <option value="en">🇺🇸 En</option>
+                  <option value="es">🇪🇸 Es</option>
+                  <option value="fr">🇫🇷 Fr</option>
+                  <option value="he">🇮🇱 He</option>
+                  <option value="it">🇮🇹 It</option>
+                  <option value="nl">🇳🇱 Nl</option>
+                  <option value="no">🇿🇦 No</option>
+                  <option value="pt">🇵🇹 Pt</option>
+                  <option value="ru">🇷🇺 Ru</option>
+                  <option value="se">🇯🇵 Se</option>
+                  <option value="ud">🇵🇰 Ud</option>
+                  <option value="zh">🇨🇳 Zh</option>
                </select>
               </label>
               <input type="submit" onClick={props.article} value="Submit" />
