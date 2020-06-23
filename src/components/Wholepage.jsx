@@ -14,16 +14,33 @@ function Wholepage(props) {
         </h1>
         <div className="flex">
           <span>
-            {/* <form onSubmit={this.handleSubmit}>
+            <form onSubmit={props.submit}>
               <input
                 type="text"
                 onChange={props.searchText}
-                value={this.state.search}
                 placeholder="Search.."
               />
               <i class="fas fa-search"></i>
-              <input type="submit" value="Search" />
-            </form> */}
+              <label>Pick preferred laguage : 
+                <select value={props.value} onChange={props.input}>
+                  <option value="ar">Ar</option>
+                  <option value="en">En</option>
+                  <option value="es">Es</option>
+                  <option value="de">De</option>
+                  <option value="fr">Fr</option>
+                  <option value="he">He</option>
+                  <option value="it">It</option>
+                  <option value="nl">Nl</option>
+                  <option value="no">No</option>
+                  <option value="pt">Pt</option>
+                  <option value="ru">Ru</option>
+                  <option value="se">Se</option>
+                  <option value="ud">Ud</option>
+                  <option value="zh">Zh</option>
+               </select>
+              </label>
+              <input type="submit" onClick={props.article} value="Submit" />
+            </form>
           </span>
           <span className="head_english channel">EN</span>
         </div>
