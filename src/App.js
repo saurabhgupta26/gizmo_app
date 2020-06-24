@@ -33,7 +33,7 @@ export default class App extends React.Component {
 
     // this.setState({everything : null});
     fetch(
-      `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=india&pageSize=100&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+      `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=world&q=stock&pageSize=100&apiKey=fd574688ac0743ea9dae28f36bd7df97`
     )
       .then((response) => response.json())
       .then((articles) => this.setState({ everything: articles.articles }));
@@ -49,24 +49,9 @@ export default class App extends React.Component {
       console.log(this.state.everything, "in the allArticle");
   }
 
-  handleLink = (btn) => {
-    var date = new Date();
-    var month =
-      +date.getMonth() + 1 <= 9
-        ? "0" + (+date.getMonth() + 1)
-        : +date.getMonth() + 1;
+  handleLink = (btn="all") => {
     if (btn === "all") {
-      fetch(
-        `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=${month}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`
-      )
-        .then((res) => res.json())
-        .then((articles) =>
-          this.setState({
-            headlines: articles.articles,
-            everything: articles.articles,
-            sources: articles.sources,
-          })
-        );
+      this.componentDidMount();
     } else {
       fetch(
         `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?sources=${btn}&language=en&apiKey=fd574688ac0743ea9dae28f36bd7df97`

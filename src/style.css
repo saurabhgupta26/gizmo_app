@@ -8,6 +8,18 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+.fixed_header {
+    position: fixed;
+    width: 88%;
+    margin-top: -6.5rem;
+    /* background: rgb(255, 249, 249);
+    box-shadow: 1px 1px 5px ;
+    height: 6rem; */
+}
+
+.buttons_styling {
+    margin-top: 5rem;
+}
 
 .flex {
     display: flex;
@@ -132,5 +144,25 @@ svg path {
   }
 
   label { 
-      margin: 0 10px;
+      margin: 0 20px;
   }
+.searchBar {
+    width: 40rem;
+}
+
+/* search button */
+.searchBtn {
+    background: transparent;
+    border: none;
+    color: rgb(31, 29, 29);
+    border: 2px solid #FA5252;
+    padding: .35rem 1.5rem;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.searchBtn:hover {
+    color: #FA5252;
+    border: 2px solid rgb(31, 29, 29);
+    background-color: #fff;
+}

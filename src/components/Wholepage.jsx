@@ -8,46 +8,47 @@ import Loading from "./Loading.jsx";
 function Wholepage(props) {
   return (
     <div className="container">
-      <div className="flex">
+      <div className="flex fixed_header">
         <h1>
           <span className="channel">GIZ</span>MO
         </h1>
         <div className="flex">
           <span>
             <form onSubmit={props.submit}>
+            <i class="fas fa-search">
               <input
                 type="text"
                 onChange={props.searchText}
                 placeholder="Search.."
+                className='searchBar'
               />
-              <i class="fas fa-search"></i>
-              <label>Pick preferred language : 
-                <select value={props.value} onChange={props.input}>
-                  <option value="ar">🇸🇦 Ar</option>
-                  <option value="de">🇩🇪 De</option>
-                  <option value="en">🇺🇸 En</option>
-                  <option value="es">🇪🇸 Es</option>
-                  <option value="fr">🇫🇷 Fr</option>
-                  <option value="he">🇮🇱 He</option>
-                  <option value="it">🇮🇹 It</option>
-                  <option value="nl">🇳🇱 Nl</option>
-                  <option value="no">🇿🇦 No</option>
-                  <option value="pt">🇵🇹 Pt</option>
-                  <option value="ru">🇷🇺 Ru</option>
-                  <option value="se">🇯🇵 Se</option>
-                  <option value="ud">🇵🇰 Ud</option>
-                  <option value="zh">🇨🇳 Zh</option>
+              </i>
+              <label>Pick preferred language:
+                <select value={props.value} onChange={props.input} className='searchBtn'>
+                  <option value="ar" role='img' aria-hidden="true">🇸🇦 Ar</option>
+                  <option value="de" role='img' aria-hidden="true">🇩🇪 De</option>
+                  <option value="en" role='img' aria-hidden="true">🇺🇸 En</option>
+                  <option value="es" role='img' aria-hidden="true">🇪🇸 Es</option>
+                  <option value="fr" role='img' aria-hidden="true">🇫🇷 Fr</option>
+                  <option value="he" role='img' aria-hidden="true">🇮🇱 He</option>
+                  <option value="it" role='img' aria-hidden="true">🇮🇹 It</option>
+                  <option value="nl" role='img' aria-hidden="true">🇳🇱 Nl</option>
+                  <option value="no" role='img' aria-hidden="true">🇿🇦 No</option>
+                  <option value="pt" role='img' aria-hidden="true">🇵🇹 Pt</option>
+                  <option value="ru" role='img' aria-hidden="true">🇷🇺 Ru</option>
+                  <option value="se" role='img' aria-hidden="true">🇯🇵 Se</option>
+                  <option value="ud" role='img' aria-hidden="true">🇵🇰 Ud</option>
+                  <option value="zh" role='img' aria-hidden="true">🇨🇳 Zh</option>
                </select>
               </label>
-              <input type="submit" onClick={props.article} value="Submit" />
+                  <input type="submit" onClick={props.article} value="Search" className='searchBtn' />
             </form>
           </span>
-          <span className="head_english channel">EN</span>
         </div>
       </div>
 
       {props.sources ? (
-        <div>
+        <div className='buttons_styling'>
           <Buttons s={props.sources} handleLink={props.handleLink} />
         </div>
       ) : (
