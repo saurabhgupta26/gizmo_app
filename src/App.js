@@ -33,7 +33,7 @@ export default class App extends React.Component {
 
     // this.setState({everything : null});
     fetch(
-      `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=world&q=stock&pageSize=100&apiKey=fd574688ac0743ea9dae28f36bd7df97`
+      `https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=india&q=stock&pageSize=100&apiKey=fd574688ac0743ea9dae28f36bd7df97`
     )
       .then((response) => response.json())
       .then((articles) => this.setState({ everything: articles.articles }));
